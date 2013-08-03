@@ -24,11 +24,11 @@ describe "Homepage and static pages" do
   end
 
   it "should have a featured product" do
+    product = create(:product)
     visit root_path
     expect(page).to have_css(".product.featured")
-    expect(page).to have_css(".product.featured.title")
-    expect(page).to have_css(".product.featured.description")
-    expect(page).to have_css(".product.featured.price")
+    expect(page).to have_css(".product.featured.title", text: product.title)
+    expect(page).to have_css(".product.featured.description", text: product.description)
+    expect(page).to have_css(".product.featured.price", text: product.price)
   end
-
 end

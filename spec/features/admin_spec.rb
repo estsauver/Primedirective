@@ -20,11 +20,12 @@ describe 'Admin Panel' do
 
   it "should let you make a product" do
     login_admin
-    save_and_open_page
     fill_in "Title", with: "New spangled widget"
     fill_in "Description", with: "It's got electrolytes!"
     fill_in "Price", with: 5.01
     click_button "Create"
+    expect(page).to have_content "Product Created!"
+    expect(page).to have_content "New spangled widget"
   end
 
 end

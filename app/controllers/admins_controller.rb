@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   before_action :require_admin
   def show
     @product = Product.new
+    @products = Product.all
   end
 
 private
