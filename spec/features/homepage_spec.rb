@@ -33,7 +33,7 @@ describe "Homepage and static pages" do
     expect(page).to have_css(".product.featured.title", text: product.title)
     expect(page).to have_css(".product.featured.description", text: product.description)
     expect(page).to have_css(".product.featured.image")
-    expect(page).to have_css(".product.featured.rating", text: product.rating)
-    expect(page).to have_css(".product.featured.price", text: product.price)
+    expect(page).to have_css(".product.featured.rating", text:"Editors Rating: #{product.rating}")
+    expect(page).to have_css(".product.featured.price", text: "Price: #{product.price} $")
   end
 end
