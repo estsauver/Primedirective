@@ -28,6 +28,14 @@ describe 'Admin Panel' do
     click_button "Create"
     expect(page).to have_content "Product Created!"
     expect(page).to have_content "New spangled widget"
+
+    #should accept the right params
+    first_product = Product.first
+
+    expect(first_product.description).to eq("It's got electrolytes!")
+    expect(first_product.image_url).to eq("http://ecx.images-amazon.com/images/I/71pTlCgTTrL._SL1500_.jpg")
+    expect(first_product.rating).to eq(4.0)
+    expect(first_product.price).to eq(5.01)
   end
 
 end
