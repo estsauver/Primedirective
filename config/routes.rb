@@ -1,5 +1,6 @@
 Amazon::Application.routes.draw do
-  root :to => 'high_voltage/pages#show', id: 'home'
+  root :to => "homes#show"
+  resource :home, :only => :show, :via => :get
   resource :admin, :only => :show, :via => :get
   resources :products, :only => [:create]
   # Example of regular route:
@@ -36,7 +37,6 @@ Amazon::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

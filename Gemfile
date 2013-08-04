@@ -11,18 +11,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 # gem 'bcrypt-ruby', '~> 3.0.0'
- gem 'unicorn'
- gem 'debugger', group: [:development, :test]
+gem 'unicorn'
+gem 'debugger', group: [:development, :test]
 
- group :development, :test do
-   gem 'rspec-rails'
-   gem 'rspec'
-   gem 'capybara'
-   gem 'factory_girl_rails'
-   gem 'launchy'
-   gem 'clearance'
- end
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec'
+  gem 'capybara'
+  gem 'factory_girl_rails', :require => false
+  gem 'launchy'
+  gem 'clearance'
+end
 
- # For Static Pages
- gem 'high_voltage'
+# For Static Pages
+gem 'high_voltage'
 

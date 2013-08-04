@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "Homepage and static pages" do
+  before(:each) do
+    @products = create_list(:product, 15)
+  end
   it "should have the title amazon prime" do 
     visit root_path
     expect(page).to have_title("Prime Directive")
@@ -16,10 +19,10 @@ describe "Homepage and static pages" do
     expect(page).to have_css("ul.products")
   end
 
-  it "should have no more than 10 products" do
+  it "should have no every product in the list" do 
     visit root_path
     within("ul.products") do
-      expect(page).to have_css("li.product", count: 2)
+      expect(page).to have_css("li.product", count: Product.count)
     end
   end
 
@@ -29,6 +32,8 @@ describe "Homepage and static pages" do
     expect(page).to have_css(".product.featured")
     expect(page).to have_css(".product.featured.title", text: product.title)
     expect(page).to have_css(".product.featured.description", text: product.description)
+    expect(page).to have_css(".product.featured.image")
+    expect(page).to have_css(".product.featured.rating", text: product.rating)
     expect(page).to have_css(".product.featured.price", text: product.price)
   end
 end

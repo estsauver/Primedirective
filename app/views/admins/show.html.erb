@@ -1,6 +1,6 @@
 <h1> Admin Panel </h1>
 <%= form_for @product do |f| %>
-  <%= f.label :title, "Title" %> 
+  <%= f.label :title, "Title" %>
   <%= f.text_field :title %> 
 
   <%= f.label :description, "Description" %> 
@@ -8,6 +8,13 @@
 
   <%= f.label :price %> 
   <%= f.text_field :price %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.label :image_url, "Image Url" %> 
+  <%= f.text_field :image_url %>
+
   <%= f.submit "Create" %>
 <% end %>
 

@@ -2,8 +2,10 @@
 
 FactoryGirl.define do
   factory :product do
-    title "MyString"
-    description "MyText"
+    title "Product Title"
+    description "Product Description"
     price "9.99"
+    rating 2.0
+    image_url "http://ecx.images-amazon.com/images/I/71pTlCgTTrL._SL1500_.jpg"
   end
 end

@@ -23,6 +23,8 @@ describe 'Admin Panel' do
     fill_in "Title", with: "New spangled widget"
     fill_in "Description", with: "It's got electrolytes!"
     fill_in "Price", with: 5.01
+    fill_in "Rating", with: 4.0
+    fill_in "Image Url", with: "http://ecx.images-amazon.com/images/I/71pTlCgTTrL._SL1500_.jpg"
     click_button "Create"
     expect(page).to have_content "Product Created!"
     expect(page).to have_content "New spangled widget"

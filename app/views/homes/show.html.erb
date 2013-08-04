@@ -1,0 +1,23 @@
+<ul class="products">
+  <% @products.each do |p| %>
+    <li class="product"><%= p.title%></li>
+  <% end %>
+</uL>
+
+<div class="product featured">
+  <div class="product featured title">
+    <%= @featured.title %>
+  </div>
+  <div class="product featured description">
+    <%= @featured.description %>
+  </div>
+  <div class="product featured image">
+    <%= image_tag( @featured.image_url) %>
+  </div>
+  <div class="product featured rating">
+    <%= @featured.rating %>
+  </div>
+  <div class="product featured price">
+    <%= @featured.price %> 
+  </div>
+</div>
