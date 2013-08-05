@@ -3,6 +3,6 @@ class HomesController < ApplicationController
   #resource. Is there a way to make this less awkwardly connected. 
   def show
     @products = Product.all
-    @featured = Product.first
+    @product = @products.first
   end
 end

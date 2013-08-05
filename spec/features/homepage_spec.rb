@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Homepage and static pages" do
   before(:each) do
-    @products = create_list(:product, 15)
+    @products = create_list(:product, 10)
   end
   it "should have the title amazon prime" do 
     visit root_path
@@ -21,6 +21,7 @@ describe "Homepage and static pages" do
 
   it "should have no every product in the list" do 
     visit root_path
+    save_and_open_page
     within("ul.products") do
       expect(page).to have_css("li.product", count: Product.count)
     end
@@ -42,5 +43,14 @@ describe "Homepage and static pages" do
     last = create(:product)
     visit root_path
     expect(page).to have_css('.featured.title', text: last.title)
+  end
+
+  it "clicking a sidebar link should show the product" do 
+    random_product = @products.shuffle.first
+    visit root_path
+    click_link random_product.title
+    save_and_open_page
+    expect(page).to have_css(".product.featured.title", text: random_product.title)
+    expect(page).to have_css("li.active", text: random_product.title)
   end
 end

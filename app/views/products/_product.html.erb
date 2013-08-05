@@ -1,2 +1,5 @@
-<h3><%=link_to  product.title, "#" %> | <%= product.price %></h3>
-<p><%= product.description %></p>
+<%= div_for product do %>
+  <h3><%=link_to  product.title, "#" %> | <%= product.price %></h3>
+  <p><%= product.description %></p>
+  <%= link_to "Delete", product, method: :delete %>
+<% end %>

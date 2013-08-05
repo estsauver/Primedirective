@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails', :require => false
   gem 'launchy'
+  gem 'forgery'
 end
 
 gem 'clearance'

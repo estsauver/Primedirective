@@ -5,6 +5,17 @@ class ProductsController < ApplicationController
     flash[:alert] = "Product Created!"
     redirect_to admin_path
   end
+  def destroy
+    Product.find(params[:id]).destroy
+    flash[:success] = "Product Destroyed"
+    redirect_to admin_path
+  end
+
+  def show
+    @product = Product.find(params[:id])
+    @products = Product.all
+    render 'homes/show'
+  end
 
   private
  
