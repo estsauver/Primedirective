@@ -22,6 +22,8 @@ group :development, :test do
   gem 'launchy'
   gem 'forgery'
 end
+gem 'rails_12factor', group: :production
+
 
 gem 'clearance'
 # For Static Pages
