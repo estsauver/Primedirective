@@ -36,4 +36,11 @@ describe "Homepage and static pages" do
     expect(page).to have_css(".product.featured.rating", text:"Editors Rating: #{product.rating}")
     expect(page).to have_css(".product.featured.price", text: "Price: #{product.price} $")
   end
+
+  it "should show the most recently created product" do
+    create(:product)
+    last = create(:product)
+    visit root_path
+    expect(page).to have_css('.featured.title', text: last.title)
+  end
 end

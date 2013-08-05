@@ -2,7 +2,10 @@
 
 FactoryGirl.define do
   factory :product do
-    title "Product Title"
+
+    sequence :title do |n|
+      "Product #{n}"
+    end
     description "Product Description"
     price "9.99"
     rating 2.0

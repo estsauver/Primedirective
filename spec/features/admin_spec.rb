@@ -37,5 +37,4 @@ describe 'Admin Panel' do
     expect(first_product.rating).to eq(4.0)
     expect(first_product.price).to eq(5.01)
   end
-
 end
