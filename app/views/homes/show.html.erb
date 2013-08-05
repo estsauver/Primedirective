@@ -22,11 +22,14 @@
       </div>
     </div><%# Ends Panel %>
   </div><%# Ends Featured Block %>
-  <div class="large-3 columns pull-9">
-    <ul class="side-nav products">
-      <% @products.each do |p| %>
-        <li class="product<%= p.id == @product.id ? " active" : ""%>"><%= link_to p.title, p %></li>
-      <% end %>
-    </ul>
+  <% cache @products do %>
+    <div class="large-3 columns pull-9">
+      <ul class="side-nav products">
+        <% @products.each do |p| %>
+          <li class="product<%= p.id == @product.id ? " active" : ""%>"><%= link_to p.title, p %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   </div>
-  </div>
+

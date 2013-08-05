@@ -9,9 +9,12 @@ describe "Homepage and static pages" do
     expect(page).to have_title("Prime Directive")
   end
 
-  it "should have a logo" do
+  it "should have a logo linking to home" do
     visit root_path
-    expect(page).to have_css("#logo")
+    within "#logo" do
+      expect(page).to have_link("Prime Directive", href: root_path)
+    end
+
   end
 
   it "should have a list of products" do
@@ -21,7 +24,6 @@ describe "Homepage and static pages" do
 
   it "should have no every product in the list" do 
     visit root_path
-    save_and_open_page
     within("ul.products") do
       expect(page).to have_css("li.product", count: Product.count)
     end
@@ -49,7 +51,6 @@ describe "Homepage and static pages" do
     random_product = @products.shuffle.first
     visit root_path
     click_link random_product.title
-    save_and_open_page
     expect(page).to have_css(".product.featured.title", text: random_product.title)
     expect(page).to have_css("li.active", text: random_product.title)
   end
