@@ -4,5 +4,6 @@ class HomesController < ApplicationController
   def show
     @products = Product.all
     @product = @products.first
+    render "products/show"
   end
 end
