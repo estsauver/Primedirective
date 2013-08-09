@@ -11,9 +11,8 @@ secondary goal was to play around with rails 4.
 Todo
 ----
 
-
-* Refactor homepage, I really don't like that products#show is rendering to the 
-homepage. If nothing else it should be rendered as a show partial. 
 * Email subscription for new products. 
 * Add direct links to amazon for now until affiliate account is approved. 
+* Refactor homepage_spec, to use the products list that's been created more
+  effecively. 
 

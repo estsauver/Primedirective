@@ -54,4 +54,9 @@ describe "Homepage and static pages" do
     expect(page).to have_css(".product.featured.title", text: random_product.title)
     expect(page).to have_css("li.active", text: random_product.title)
   end
+
+  it "should have an email newsletter signup" do 
+    visit root_path
+    expect(page).to have_css(".email.signup") 
+  end
 end

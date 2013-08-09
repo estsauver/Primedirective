@@ -31,6 +31,14 @@
     </div>
   </header>
   <%= yield %>
+  <div class="row">
+    <div class="large-8 columns email signup">
+      <%= form_for :newsletter_request, url: newsletter_requests_path do |f| %>
+        <%= f.text_field :email, :placeholder=> "E mail" %>
+        <%= f.submit "Get our best weekly gift ideas!" %>
+      <% end %>
+    </div>
+  </div>
 
 </body>
 </html>
