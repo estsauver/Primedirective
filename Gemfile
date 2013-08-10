@@ -8,7 +8,7 @@ group :assets do
 
   gem 'compass-rails'
 end
-  gem 'zurb-foundation', '~> 4.0.0'
+gem 'zurb-foundation', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -34,3 +34,5 @@ gem 'clearance'
 # For Static Pages
 gem 'high_voltage'
 
+# For mailchimp
+gem 'gibbon'

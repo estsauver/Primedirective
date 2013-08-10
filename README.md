@@ -11,8 +11,8 @@ secondary goal was to play around with rails 4.
 Todo
 ----
 
-* Email subscription for new products. 
 * Add direct links to amazon for now until affiliate account is approved. 
 * Refactor homepage_spec, to use the products list that's been created more
   effecively. 
+* Mockout mailchimp requests to speed up tests.
 

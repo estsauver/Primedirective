@@ -3,6 +3,8 @@ class NewsletterRequestsController < ApplicationController
     @request = NewsletterRequest.new(newsletter_params)
     if @request.save
       flash[:success] = "Thanks for signing up!"
+    else
+      flash[:alert] = "Sorry, that email didn't look right. Did you mistype something?"
     end
 
     redirect_to(:back)
@@ -10,7 +12,6 @@ class NewsletterRequestsController < ApplicationController
   private 
 
   def newsletter_params
-    puts params
     params.require(:newsletter_request).permit(:email)
   end
 end
