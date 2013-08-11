@@ -9,7 +9,6 @@ group :assets do
   gem 'compass-rails'
   gem 'zurb-foundation', "~> 4.0.0"
 end
-  gem 'zurb-foundation', "~> 4.0.0"
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -29,6 +28,8 @@ group :development, :test do
   gem 'forgery'
 end
 gem 'rails_12factor', group: :production
+gem 'vcr'
+gem 'fakeweb'
 
 
 gem 'clearance'

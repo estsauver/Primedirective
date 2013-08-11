@@ -33,7 +33,10 @@ describe "Homepage and static pages" do
     product = create(:product)
     visit root_path
     expect(page).to have_css(".product.featured")
+
     expect(page).to have_css(".product.featured.title", text: product.title)
+    expect(page).to have_link(product.title, :href => product.link)
+
     expect(page).to have_css(".product.featured.description", text: product.description)
     expect(page).to have_css(".product.featured.image")
     expect(page).to have_css(".product.featured.rating", text:"Editors Rating: #{product.rating}")

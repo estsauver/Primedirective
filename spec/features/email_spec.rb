@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Signing up for an email" do 
-  it "should let you enter an email to signup" do
+  it "should let you enter an email to signup", :vcr do
     create(:product)
     visit root_path
     fill_in "E mail", with: "example@mail.com" 
@@ -10,7 +10,7 @@ describe "Signing up for an email" do
     expect(NewsletterRequest.find_by_email("example@mail.com")).to_not eq(nil)
   end
 
-  it "should prevent you from signing up with a bad email" do
+  it "should prevent you from signing up with a bad email", :vcr do
     create(:product)
     visit root_path
     fill_in "E mail", with: "potato!"

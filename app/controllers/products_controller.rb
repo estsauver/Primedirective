@@ -15,6 +15,17 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @products = Product.all
+    respond_to do |format|
+      format.html 
+      format.json {render :json => @product}
+    end
+  end
+  
+  def index
+    @products = Product.all
+    respond_to do |format|
+      format.json {render :json => @products}
+    end
   end
 
   private
