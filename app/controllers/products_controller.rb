@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :require_admin, only: [ :create, :destroy]
   def create
     @product = Product.new(product_params)
     @product.save
@@ -21,4 +22,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :description, :price, :rating, :image_url)
   end
+
 end
