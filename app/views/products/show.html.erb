@@ -22,7 +22,6 @@
       </div>
     </div><%# Ends Panel %>
   </div><%# Ends Featured Block %>
-  <% cache @products do %>
     <div class="large-3 columns pull-9">
       <ul class="side-nav products">
         <% @products.each do |p| %>
@@ -30,5 +29,4 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
 </div>
