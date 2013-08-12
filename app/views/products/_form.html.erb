@@ -1,0 +1,21 @@
+<%= form_for product do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %> 
+
+  <%= f.label :description, "Description" %> 
+  <%= f.text_field :description %>
+
+  <%= f.label :price %> 
+  <%= f.text_field :price %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.label :image_url, "Image Url" %> 
+  <%= f.text_field :image_url %>
+
+  <%= f.label :link, "Amazon Link" %>
+  <%= f.text_field :link %>
+
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :require_admin, only: [ :create, :destroy]
+  before_action :require_admin, only: [ :create, :destroy, :edit, :update]
   def create
     @product = Product.new(product_params)
     @product.save
@@ -27,11 +27,23 @@ class ProductsController < ApplicationController
       format.json {render :json => @products}
     end
   end
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to(@product)
+    else
+      render "edit"
+    end
+  end
 
   private
  
   def product_params
-    params.require(:product).permit(:title, :description, :price, :rating, :image_url)
+    params.require(:product).permit(:title, :description, :price, :rating, :image_url, :link)
   end
 
 end

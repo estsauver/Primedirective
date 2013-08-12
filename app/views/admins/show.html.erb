@@ -1,22 +1,4 @@
 <h1> Admin Panel </h1>
-<%= form_for @product do |f| %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %> 
-
-  <%= f.label :description, "Description" %> 
-  <%= f.text_field :description %>
-
-  <%= f.label :price %> 
-  <%= f.text_field :price %>
-
-  <%= f.label :rating %>
-  <%= f.text_field :rating %>
-
-  <%= f.label :image_url, "Image Url" %> 
-  <%= f.text_field :image_url %>
-
-  <%= f.submit "Create" %>
-<% end %>
-
+<%= render partial: "products/form", locals: {product: @product} %>
 <h2> Products</h2>
 <%= render @products %>

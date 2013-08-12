@@ -39,6 +39,15 @@ describe 'Admin Panel' do
        click_link "Delete", match: :first
     end.to change(Product, :count).by(-1)
   end
+
+  it "should let you edit a product" do
+    login_admin
+    fill_out_form
+    click_link "Edit"
+    fill_in "Title", with: "Renamed widget"
+    fill_in "Link", with: "http://www.amazon.com/gp/product/B00076SCVG/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00076SCVG&linkCode=as2&tag=zengif-20"
+    click_button "Submit"
+  end
 end
 
 def fill_out_form
@@ -47,5 +56,5 @@ def fill_out_form
     fill_in "Price", with: 5.01
     fill_in "Rating", with: 4.0
     fill_in "Image Url", with: "http://ecx.images-amazon.com/images/I/71pTlCgTTrL._SL1500_.jpg"
-    click_button "Create"
+    click_button "Submit"
 end

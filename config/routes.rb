@@ -2,7 +2,7 @@ Amazon::Application.routes.draw do
   root :to => "homes#show"
   resource :home, :only => :show, :via => :get
   resource :admin, :only => :show, :via => :get
-  resources :products, :only => [:create, :destroy, :show, :index]
+  resources :products, :only => [:create, :destroy, :show, :index, :edit, :update]
   resources :newsletter_requests, :only => :create
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
