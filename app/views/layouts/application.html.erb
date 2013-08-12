@@ -16,6 +16,7 @@
             <h1>Prime Directive</h1>
           <% end %>
         </div>
+        <%= render "newsletter_requests/newsletter_request" %>
         <% flash.each do |key, value| %>
           <div class="alert-box">
             <div class="flash <%= key %>"><%= value %></div>
@@ -26,7 +27,6 @@
     </div>
   </header>
   <%= yield %>
-  <%= render "newsletter_requests/newsletter_request" %>
   <div class="row footer">
     
   </div>

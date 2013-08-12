@@ -4,6 +4,7 @@ Amazon::Application.routes.draw do
   resource :admin, :only => :show, :via => :get
   resources :products, :only => [:create, :destroy, :show, :index, :edit, :update]
   resources :newsletter_requests, :only => :create
+  resources :reminders, :only => [:create]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
