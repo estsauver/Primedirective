@@ -43,7 +43,7 @@ describe 'Admin Panel' do
   it "should let you edit a product" do
     login_admin
     fill_out_form
-    click_link "Edit"
+    click_link "Edit", match: :first
     fill_in "Title", with: "Renamed widget"
     fill_in "Link", with: "http://www.amazon.com/gp/product/B00076SCVG/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00076SCVG&linkCode=as2&tag=zengif-20"
     click_button "Submit"

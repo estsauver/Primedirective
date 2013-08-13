@@ -21,12 +21,24 @@
         <div class="product featured description">
           <p><%= @product.description %></p>
         </div>
+        <fieldset>
+        <div class="row">
+          <div class="large-12 columns text-center">
+            <h4> Get the perfect gift right before <%= image_tag "anyone_line.png" %>Birthday. </h4>
+          </div>
+        </div>
  
+        <div class="row">
+            <%= render  "reminders/form" %>
+        </div>
+        <div class="row text-center">
+          <div class="large-12 columns"><h5> 
+          We'll send you a reminder about a week before the big day with this product!
+        </h5></div>
+        </div>
+      </fieldset>
       </div><%# Ends Panel %>
 
-      <div class="row">
-          <%= render  "reminders/form" %>
-      </div>
     </div><%# Ends Featured Block %>
     <div class="large-3 columns pull-9">
       <ul class="side-nav products">

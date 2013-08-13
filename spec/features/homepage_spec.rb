@@ -6,13 +6,13 @@ describe "Homepage and static pages" do
   end
   it "should have the title amazon prime" do 
     visit root_path
-    expect(page).to have_title("Prime Directive")
+    expect(page).to have_title "ZenGifting"
   end
 
   it "should have a logo linking to home" do
     visit root_path
     within "#logo" do
-      expect(page).to have_link("Prime Directive", href: root_path)
+      expect(page).to have_css("img")
     end
 
   end

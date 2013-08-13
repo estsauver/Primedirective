@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prime Directive</title>
+  <title>ZenGifting</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width">
@@ -10,13 +10,14 @@
 <body>
   <header>
     <div class="row">
+    </div>
+    <div class="row">
       <div class="large-12 columns">
         <div id="logo">
           <%= link_to root_path do %>
-            <h1>Prime Directive</h1>
+            <%= image_tag "logo.png" %>
           <% end %>
         </div>
-        <%= render "newsletter_requests/newsletter_request" %>
         <% flash.each do |key, value| %>
           <div class="alert-box">
             <div class="flash <%= key %>"><%= value %></div>
@@ -27,8 +28,8 @@
     </div>
   </header>
   <%= yield %>
-  <div class="row footer">
-    
+  <div class="large-12 columns topbar">
+    <%= render "newsletter_requests/newsletter_request" %>
   </div>
 </body>
 </html>
