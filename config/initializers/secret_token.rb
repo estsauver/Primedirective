@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Amazon::Application.config.secret_key_base = 'c168230d4d4e12efa0259a4bce5eb1979a6cb7c042762586886d8db88e4d94bd0ed575311959de39b7476f7027b3cc43148531f329c4471cf2dcee67addd5dae'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Amazon::Application.config.secret_key_base = secure_token

@@ -6,3 +6,9 @@
 /spec/vcr
 /log/*.log
 /tmp
+
+
+.project
+.DS_Store
+.idea
+.secret

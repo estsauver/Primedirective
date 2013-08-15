@@ -1,6 +1,7 @@
 Simple Product Display
 ======================
 
+
 Purpose
 -------
 Edit: It became clear when I was writing this that there was actually a much
