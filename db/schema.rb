@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812151718) do
+ActiveRecord::Schema.define(version: 20130815042213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20130812151718) do
     t.integer  "product_id"
     t.integer  "user_id"
     t.datetime "date"
+    t.string   "event"
+    t.boolean  "sent",       default: false
   end
 
   add_index "reminders", ["product_id"], name: "index_reminders_on_product_id", using: :btree

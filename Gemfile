@@ -36,5 +36,6 @@ gem 'clearance'
 # For Static Pages
 gem 'high_voltage'
 
+gem 'resque'
 # For mailchimp
 gem 'gibbon'

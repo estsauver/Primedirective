@@ -12,12 +12,22 @@
     <div class="row">
     </div>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-8 columns">
         <div id="logo">
           <%= link_to root_path do %>
             <%= image_tag "logo.png" %>
           <% end %>
         </div>
+      </div>
+      <div class="large-4 columns">
+        <% if signed_in? %>
+          <%= current_user.email %> 
+          <%= link_to "Sign out" , sign_out_path, method: :delete%>
+        <% else %> 
+          <%= link_to "Sign in", sign_in_path %>
+        <% end %>
+      </div>
+      <div class="large-12 columns">
         <% flash.each do |key, value| %>
           <div class="alert-box">
             <div class="flash <%= key %>"><%= value %></div>

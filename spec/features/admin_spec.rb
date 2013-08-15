@@ -48,6 +48,15 @@ describe 'Admin Panel' do
     fill_in "Link", with: "http://www.amazon.com/gp/product/B00076SCVG/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00076SCVG&linkCode=as2&tag=zengif-20"
     click_button "Submit"
   end
+
+  it "should let you sign out" do 
+    create(:product)
+    login_admin 
+    click_link "Sign out"
+    login_user
+    visit admin_path
+    expect(page).to have_content("Nothing to see here!")
+  end
 end
 
 def fill_out_form

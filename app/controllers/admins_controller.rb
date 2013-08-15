@@ -8,6 +8,9 @@ class AdminsController < ApplicationController
 
 private
     def require_admin
-      redirect_to root_path unless current_user.admin
+      unless current_user.admin
+        flash[:alert] = "Nothing to see here! Move along citizen."
+        redirect_to root_path 
+      end
     end
 end
