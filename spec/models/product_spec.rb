@@ -9,5 +9,6 @@ describe Product do
     expect(product.description).to_not eq(nil?)
     expect(product.title).to_not eq(nil?)
     expect(product.link).to_not eq(nil?)
+    expect(product.featured).to eq(false)
   end
 end

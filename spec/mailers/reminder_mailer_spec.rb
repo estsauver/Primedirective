@@ -29,9 +29,10 @@ describe ReminderMailer do
   end
   
   it "should have a from at info@zengifting.com" do
-    reminder = create(:reminder)
+    reminder = create(:reminder, date: 10.days.from_now)
     ReminderMailer.event_reminder(reminder.id).deliver
     email = ActionMailer::Base.deliveries.last
     expect(email.from).to eq(["info@zengifting.com"])
+    expect(email.body).to include("10 days")
   end
 end
