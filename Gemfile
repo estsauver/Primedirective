@@ -39,3 +39,6 @@ gem 'high_voltage'
 gem 'resque'
 # For mailchimp
 gem 'gibbon'
+
+# For memcache
+gem 'dalli'
