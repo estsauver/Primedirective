@@ -20,6 +20,7 @@ Todo
 * Make simple_format description
 * Integrate Products API
 * Add facebook friends's birthdays.
+* Grab amazon wishlists
 * Add landing page
 * Add photo grid to display products.
 * Refactor homepage spec, to use the products list that's been created more
