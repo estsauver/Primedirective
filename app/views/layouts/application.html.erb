@@ -19,7 +19,7 @@
           <% end %>
         </div>
       </div>
-      <div class="large-4 columns">
+      <div class="large-4 columns text-right">
         <% if signed_in? %>
           <%= current_user.email %> 
           <%= link_to "Sign out" , sign_out_path, method: :delete%>
