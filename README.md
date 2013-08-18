@@ -16,7 +16,12 @@ secondary goal was to play around with rails 4.
 
 Todo
 ----
-* Add actually ability to send out mail reminder. 
+* Add more products to homepage
+* Make simple_format description
+* Integrate Products API
+* Add facebook friends's birthdays.
+* Add landing page
+* Add photo grid to display products.
 * Refactor homepage spec, to use the products list that's been created more
   effecively.
 

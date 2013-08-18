@@ -1,12 +1,10 @@
 // Required global settings and mixins for Foundation
 @import "foundation/foundation-global";
 
-// Settings file to override Foundation variables
-
-// You can find the variables for each component at the bottom of their
-// doc page. We tried to name them to where they'd make sense just by reading them.
-// Go to http://foundation.zurb.com/docs/ to find what you need.
-
+@font-face {
+  font-family: "Old Standard TT";
+  src: font_path("OldStandard-Regular.ttf");
+}
 //
 // Foundation Global Variables
 //
@@ -17,7 +15,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Old Standard TT", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -85,8 +83,8 @@
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $header-font-weight: bold;
+ $header-font-family:  "Old Standard TT","Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;

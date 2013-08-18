@@ -10,6 +10,9 @@
 }
 
 
+.featured.info{
+ line-height:36px; 
+}
 .product.featured.title a {
   color:#333333;
 }

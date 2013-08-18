@@ -43,6 +43,14 @@ describe "Homepage and static pages" do
     expect(page).to have_css(".product.featured.price", text: "Price: #{product.price} $")
   end
 
+  it "should displaynewlines in product" do 
+    product = create(:product, :description => "This has a newline \n Hey It has one")
+    visit root_path
+    within(".product.featured.description") do 
+      expect(page).to have_css("br")
+    end
+  end
+
   it "should show the most recently created product" do
     create(:product)
     last = create(:product)
